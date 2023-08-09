@@ -1,0 +1,15 @@
+#  Local .terraform directories
+**/.terraform/*
+.vscode
+# .tfstate files
+*.tfstate
+*.tfstate.*
+*.terraform.lock.*
+
+# .tfvars files
+*.tfvars
+
+# gcloud configs
+account.json
+
+.DS_Store

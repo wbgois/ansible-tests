@@ -1,0 +1,47 @@
+---
+- name: Install Docker and Run Sysbench
+  hosts: all
+  become: yes
+  become_method: sudo
+  
+  tasks:
+    - name: Update apt cache
+      apt:
+        update_cache: yes
+      changed_when: false
+    # - name: Install Docker
+    #   apt:
+    #     name: docker.io
+    #     state: present
+
+    # - name: Start Docker service
+    #   service:
+    #     name: docker
+    #     state: started
+    - name: Install sysbench
+      apt:
+        name: sysbench
+        state: present
+
+    # - name: Start Docker service
+    #   service:
+    #     name: docker
+    #     state: started
+
+    - name: Run Sysbench CPU test
+      command: sysbench cpu --cpu-max-prime=20000 --threads=1 run
+      register: cpu_test_result
+      changed_when: false
+
+    - name: Run Sysbench memory test
+      command: sysbench memory --memory-block-size=1M --memory-total-size=2G --threads=1 run
+      register: memory_test_result
+      changed_when: false
+
+    # - name: Display CPU 1th test result
+    #   debug:
+    #     var: cpu_test_result.stdout
+
+    # - name: Display memory 1th test result
+    #   debug:
+    #     var: memory_test_result.stdout

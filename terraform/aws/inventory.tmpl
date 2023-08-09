@@ -1,0 +1,4 @@
+[all]
+%{ for ip in ip_addrs ~}
+${ip} ansible_user=${user}
+%{ endfor ~}
