@@ -9,34 +9,52 @@
       apt:
         update_cache: yes
       changed_when: false
-    # - name: Install Docker
-    #   apt:
-    #     name: docker.io
-    #     state: present
+    - name: Install Docker
+      apt:
+        name: docker.io
+        state: present
 
-    # - name: Start Docker service
-    #   service:
-    #     name: docker
-    #     state: started
+
     - name: Install sysbench
       apt:
         name: sysbench
         state: present
 
-    # - name: Start Docker service
-    #   service:
-    #     name: docker
-    #     state: started
+    - name: Start Docker service
+      service:
+        name: docker
+        state: started
 
-    - name: Run Sysbench CPU test
+    - name: Run Sysbench CPU test 1
       command: sysbench cpu --cpu-max-prime=20000 --threads=1 run
       register: cpu_test_result
       changed_when: false
 
-    - name: Run Sysbench memory test
-      command: sysbench memory --memory-block-size=1M --memory-total-size=2G --threads=1 run
+    - name: Run Sysbench CPU test 4
+      command: sysbench cpu --cpu-max-prime=20000 --threads=1 run
+      register: cpu_test_result
+      changed_when: false
+
+    - name: Run Sysbench memory test 1
+      command: sysbench memory --memory-block-size=1M --memory-total-size=6G --threads=1 run
       register: memory_test_result
       changed_when: false
+
+    - name: Run Sysbench memory test 4
+      command: sysbench memory --memory-block-size=1M --memory-total-size=6G --threads=4 run
+      register: memory_test_result
+      changed_when: false
+
+    - name: Run calc increment  test 1
+      command: docker run --rm jojje/cloud-cpu-bench -t1
+      changed_when: false  
+
+    - name: Run calc increment  test 4
+      command: docker run --rm jojje/cloud-cpu-bench -t4
+      changed_when: false     
+
+
+
 
     # - name: Display CPU 1th test result
     #   debug:

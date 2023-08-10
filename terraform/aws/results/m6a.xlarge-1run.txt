@@ -1,0 +1,176 @@
+
+Run Sysbench CPU test 1...
+ 
+
+Prime numbers limit: 20000
+
+CPU speed:
+    events per second:  1602.56
+
+General statistics:
+    total time:                          10.0003s
+    total number of events:              16027
+
+Latency (ms):
+         min:                                    0.62
+         avg:                                    0.62
+         max:                                    0.72
+         95th percentile:                        0.63
+         sum:                                 9998.07
+
+Threads fairness:
+    events (avg/stddev):           16027.0000/0.00
+    execution time (avg/stddev):   9.9981/0.00
+
+
+Run Sysbench CPU test 4...
+
+
+Prime numbers limit: 20000
+
+CPU speed:
+    events per second:  1602.83
+
+General statistics:
+    total time:                          10.0005s
+    total number of events:              16030
+
+Latency (ms):
+         min:                                    0.62
+         avg:                                    0.62
+         max:                                    0.66
+         95th percentile:                        0.63
+         sum:                                 9998.46
+
+Threads fairness:
+    events (avg/stddev):           16030.0000/0.00
+    execution time (avg/stddev):   9.9985/0.00
+
+
+
+Run Sysbench memory test 1...
+
+
+Running memory speed test with the following options:
+  block size: 1024KiB
+  total size: 6144MiB
+  operation: write
+  scope: global
+
+Initializing worker threads...
+
+Threads started!
+
+Total operations: 6144 (30382.55 per second)
+
+6144.00 MiB transferred (30382.55 MiB/sec)
+
+
+General statistics:
+    total time:                          0.2017s
+    total number of events:              6144
+
+Latency (ms):
+         min:                                    0.03
+         avg:                                    0.03
+         max:                                    0.06
+         95th percentile:                        0.03
+         sum:                                  200.63
+
+Threads fairness:
+    events (avg/stddev):           6144.0000/0.00
+    execution time (avg/stddev):   0.2006/0.00
+
+
+
+
+Run Sysbench memory test 4...
+  
+
+Running memory speed test with the following options:
+  block size: 1024KiB
+  total size: 6144MiB
+  operation: write
+  scope: global
+
+Initializing worker threads...
+
+Threads started!
+
+Total operations: 6144 (29800.35 per second)
+
+6144.00 MiB transferred (29800.35 MiB/sec)
+
+
+General statistics:
+    total time:                          0.2055s
+    total number of events:              6144
+
+Latency (ms):
+         min:                                    0.03
+         avg:                                    0.03
+         max:                                    0.19
+         95th percentile:                        0.03
+         sum:                                  204.49
+
+Threads fairness:
+    events (avg/stddev):           6144.0000/0.00
+    execution time (avg/stddev):   0.2045/0.00
+
+
+Run calc increment  test 1...
+  
+
+==[ CPU PERFORMANCE (Mops/cpu) ]======================================
+
+P99          231.0
+P95          231.0
+P90          231.0
+Mean         231.34
+StDev        0.476
+Median       231.0
+
+==[ CPU INFO ]========================================================
+
+CPUs         4
+Model        AMD EPYC 7R13 Processor
+MHz          2649.910
+Cache        512 KB
+BogoMips     5299.82
+
+==[ TEST INFO ]=======================================================
+
+Samples      100
+Threads      1
+Generated    2023-08-10 19:46:34 +0000
+Kernal       Linux 96f52edd2b33 6.1.0-10-cloud-amd64 #1 SMP PREEMPT_DYNAMIC Debian 6.1.37-1 (2023-07-03) x86_64 Linux
+
+Version      0.2.0
+Starve-check f14d7ba8152c8e09179fea3f47fd6b3a93f13cae
+Run calc increment  test 4...
+  34.238.160.228 ok | stdout: 128M   128M   128M   128M
+
+==[ CPU PERFORMANCE (Mops/cpu) ]======================================
+
+P99          128.0
+P95          128.0
+P90          128.0
+Mean         128.0
+StDev        0.025
+Median       128.0
+
+==[ CPU INFO ]========================================================
+
+CPUs         4
+Model        AMD EPYC 7R13 Processor
+MHz          3599.162
+Cache        512 KB
+BogoMips     5299.82
+
+==[ TEST INFO ]=======================================================
+
+Samples      100
+Threads      4
+Generated    2023-08-10 19:48:20 +0000
+Kernal       Linux 415978a23918 6.1.0-10-cloud-amd64 #1 SMP PREEMPT_DYNAMIC Debian 6.1.37-1 (2023-07-03) x86_64 Linux
+

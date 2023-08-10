@@ -1,0 +1,203 @@
+Run Sysbench CPU test 1...
+  54.172.208.106 ok | stdout: sysbench 1.0.20 (using system LuaJIT 2.1.0-beta3)
+
+Running the test with following options:
+Number of threads: 1
+Initializing random number generator from current time
+
+
+Prime numbers limit: 20000
+
+Initializing worker threads...
+
+Threads started!
+
+CPU speed:
+    events per second:  1251.34
+
+General statistics:
+    total time:                          10.0009s
+    total number of events:              12516
+
+Latency (ms):
+         min:                                    0.80
+         avg:                                    0.80
+         max:                                    0.86
+         95th percentile:                        0.80
+         sum:                                 9999.00
+
+Threads fairness:
+    events (avg/stddev):           12516.0000/0.00
+    execution time (avg/stddev):   9.9990/0.00
+
+
+
+Run Sysbench CPU test 4...
+  54.172.208.106 ok | stdout: sysbench 1.0.20 (using system LuaJIT 2.1.0-beta3)
+
+Running the test with following options:
+Number of threads: 1
+Initializing random number generator from current time
+
+
+Prime numbers limit: 20000
+
+Initializing worker threads...
+
+Threads started!
+
+CPU speed:
+    events per second:  1251.68
+
+General statistics:
+    total time:                          10.0006s
+    total number of events:              12519
+
+Latency (ms):
+         min:                                    0.80
+         avg:                                    0.80
+         max:                                    1.23
+         95th percentile:                        0.81
+         sum:                                 9998.69
+
+Threads fairness:
+    events (avg/stddev):           12519.0000/0.00
+    execution time (avg/stddev):   9.9987/0.00
+Run Sysbench memory test 1...
+  54.172.208.106 ok | stdout: sysbench 1.0.20 (using system LuaJIT 2.1.0-beta3)
+
+Running the test with following options:
+Number of threads: 1
+Initializing random number generator from current time
+
+
+Running memory speed test with the following options:
+  block size: 1024KiB
+  total size: 6144MiB
+  operation: write
+  scope: global
+
+Initializing worker threads...
+
+Threads started!
+
+Total operations: 6144 (32980.04 per second)
+
+6144.00 MiB transferred (32980.04 MiB/sec)
+
+
+General statistics:
+    total time:                          0.1852s
+    total number of events:              6144
+
+Latency (ms):
+         min:                                    0.03
+         avg:                                    0.03
+         max:                                    0.20
+         95th percentile:                        0.03
+         sum:                                  183.84
+
+Threads fairness:
+    events (avg/stddev):           6144.0000/0.00
+    execution time (avg/stddev):   0.1838/0.00
+Run Sysbench memory test 4...
+  54.172.208.106 ok | stdout: sysbench 1.0.20 (using system LuaJIT 2.1.0-beta3)
+
+Running the test with following options:
+Number of threads: 1
+Initializing random number generator from current time
+
+
+Running memory speed test with the following options:
+  block size: 1024KiB
+  total size: 6144MiB
+  operation: write
+  scope: global
+
+Initializing worker threads...
+
+Threads started!
+
+Total operations: 6144 (33105.23 per second)
+
+6144.00 MiB transferred (33105.23 MiB/sec)
+
+
+General statistics:
+    total time:                          0.1844s
+    total number of events:              6144
+
+Latency (ms):
+         min:                                    0.03
+         avg:                                    0.03
+         max:                                    0.21
+         95th percentile:                        0.03
+         sum:                                  183.21
+
+
+
+
+==[ CPU PERFORMANCE (Mops/cpu) ]======================================
+
+P99          139.0
+P95          140.0
+P90          140.0
+Mean         139.98
+StDev        0.141
+Median       140.0
+
+==[ CPU INFO ]========================================================
+
+CPUs         4
+Model        Intel(R) Xeon(R) Platinum 8488C
+MHz          2400.000
+Cache        107520 KB
+BogoMips     4800.00
+
+==[ TEST INFO ]=======================================================
+
+Samples      100
+Threads      1
+Generated    2023-08-10 18:43:23 +0000
+Kernal       Linux 76888f4c7b6a 6.1.0-10-cloud-amd64 #1 SMP PREEMPT_DYNAMIC Debian 6.1.37-1 (2023-07-03) x86_64 Linux
+
+
+
+
+Run calc increment  test 4...
+  54.172.208.106 ok | stdout: 93M    93M    93M    93M
+
+
+==[ CPU PERFORMANCE (Mops/cpu) ]======================================
+
+P99          92.5
+P95          92.75
+P90          93.0
+Mean         93.38
+StDev        0.349
+Median       93.5
+
+==[ CPU INFO ]========================================================
+
+CPUs         4
+Model        Intel(R) Xeon(R) Platinum 8488C
+MHz          2400.000
+Cache        107520 KB
+BogoMips     4800.00
+
+==[ TEST INFO ]=======================================================
+
+Samples      100
+Threads      4
+Generated    2023-08-10 18:45:08 +0000
+Kernal       Linux bad2b38a33b5 6.1.0-10-cloud-amd64 #1 SMP PREEMPT_DYNAMIC Debian 6.1.37-1 (2023-07-03) x86_64 Linux
+
+Version      0.2.0
+Starve-check f14d7ba8152c8e09179fea3f47fd6b3a93f13cae
+
+
+
+
+Threads fairness:
+    events (avg/stddev):           6144.0000/0.00
+    execution time (avg/stddev):   0.1832/0.00
