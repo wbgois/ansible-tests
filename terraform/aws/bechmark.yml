@@ -19,7 +19,12 @@
       apt:
         name: sysbench
         state: present
-
+        
+    - name: Install geekbench
+      command: wget https://cdn.geekbench.com/Geekbench-6.1.0-Linux.tar.gz;tar -xvzf Geekbench-6.1.0-Linux.tar.gz;cd Geekbench-6.1.0-Linux
+      register: install geekbench
+      changed_when: false
+    
     - name: Start Docker service
       service:
         name: docker
@@ -53,6 +58,10 @@
       command: docker run --rm jojje/cloud-cpu-bench -t4
       changed_when: false     
 
+
+    - name: Run geekbench
+      command: cd ~/; cd Geekbench-6.1.0-Linux;./geekbench6
+      changed_when: false    
 
 
 
