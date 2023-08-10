@@ -1,6 +1,0 @@
-[all]
-54.224.195.237 ansible_user=admin
-
-[defaults]
-stdout_callback = unixy
-bin_ansible_callbacks = True

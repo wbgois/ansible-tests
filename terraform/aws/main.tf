@@ -61,14 +61,31 @@ resource "aws_instance" "ec2_m5_debian" {
   }
 
   tags = {
-    Name  = "benchmark"
+    Name  = "benchmark-m5"
+  }
+}
+
+resource "aws_instance" "ec2_c5_debian" {
+  ami             = var.ami_id
+  instance_type   = "c5.xlarge"
+  key_name        = aws_key_pair.my_keypair.key_name
+  security_groups = [aws_security_group.allow_ssh.name]
+  root_block_device {
+    volume_type = "gp3"
+    volume_size = 30
+  }
+
+  tags = {
+    Name  = "benchmark-m5"
   }
 }
 
 
+
 output "instance_ips" {
   value = [
-    aws_instance.ec2_m5_debian.public_ip
+    aws_instance.ec2_m5_debian.public_ip,
+    aws_instance.ec2_c5_debian.public_ip
   ]
 }
 
@@ -76,7 +93,7 @@ output "instance_ips" {
   content = templatefile("inventory.tmpl",
     {
       user = "admin",
-      ip_addrs = [aws_instance.ec2_m5_debian.public_ip]
+      ip_addrs = [aws_instance.ec2_m5_debian.public_ip,aws_instance.ec2_c5_debian.public_ip]
     }
   )
   filename = "hosts"
